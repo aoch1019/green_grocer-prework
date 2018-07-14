@@ -25,7 +25,7 @@ def apply_coupons(cart, coupons)
     cost = coupon[:cost]
     is_clearance = true
     
-    if cart.include?(item)
+    if cart.include?(item) && cart[item][:count] > 0
       cart[item][:count] -= num
       is_clearance = cart[item][:clearance]
     else
