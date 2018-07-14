@@ -26,6 +26,7 @@ def apply_coupons(cart, coupons)
     is_clearance = true
     
     if cart.include?(item) && cart[item][:count] > 0
+      binding.pry
       cart[item][:count] -= num
       is_clearance = cart[item][:clearance]
     else
